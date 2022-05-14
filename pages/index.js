@@ -1,20 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-// import styles1 from "../styles/Home1.module.css";
-// import styles2 from "../styles/Home2.module.css";
 import Link from "next/link";
-import Dummy from "../components/Dummy";
 
 export default function Home() {
   return (
     <div className={styles.container}>
-      {/* to use style jsx of dummy overall you have to imort dummy first */}
-      <Dummy />
-      {/* style jsx */}
       <style jsx>{`
-        .mySpan {
-          color: red;
+        h2 {
+          font-size: 40px;
+        }
+        h3 {
+          font-size: 25px;
         }
       `}</style>
       <Head>
@@ -39,34 +36,41 @@ export default function Home() {
         </ul>
       </nav>
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          <span className="mySpan">Welcome to Hunting Coder</span>
-        </h1>
-
+        <h1 className={styles.title}>Welcome to Hunting Coder</h1>
+        <div className={styles.imgWrap}>
+          <Image
+            className={styles.myImg}
+            src="/coder.avif"
+            alt=""
+            width={300}
+            height={200}
+          />
+        </div>
         <p className={styles.description}>
           A blog for hunting coders by a hunting coder
         </p>
 
-        <div className="blog dummy">
+        <div className="blog">
           <h2>Popular Blogs</h2>
+          <div className="blogItem">
+            <h3>How to learn JavaScript</h3>
+            <p>JavaScript is the language used to design logic for the web</p>
+          </div>
+          <div className="blogItem">
+            <h3>How to learn JavaScript</h3>
+            <p>JavaScript is the language used to design logic for the web</p>
+          </div>
+          <div className="blogItem">
+            <h3>How to learn JavaScript</h3>
+            <p>JavaScript is the language used to design logic for the web</p>
+          </div>
           <div className="blogItem">
             <h3>How to learn JavaScript</h3>
             <p>JavaScript is the language used to design logic for the web</p>
           </div>
         </div>
       </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
   );
 }
