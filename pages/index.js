@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import styles1 from "../styles/Home1.module.css";
+import styles2 from "../styles/Home2.module.css";
 import Link from "next/link";
 
 export default function Home() {
@@ -34,7 +36,9 @@ export default function Home() {
           A blog for hunting coders by a hunting coder
         </p>
 
-        <div className="blogs">
+        <div className={`${styles1.con} ${styles2.con}`}>
+          {/* here we see clearly there will be no collision if css is provided to the same class
+           the latter one will be considered */}
           <h2>Popular Blogs</h2>
           <div className="blogItem">
             <h3>How to learn JavaScript</h3>
